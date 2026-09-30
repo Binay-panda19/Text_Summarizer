@@ -1,0 +1,637 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: Inter, Arial, Helvetica, sans-serif;
+
+  background: #f5f7fb;
+
+  color: #111827;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 70px;
+
+  background: white;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.logo span {
+  color: #6366f1;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+
+  background: #22c55e;
+
+  border-radius: 50%;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  width: 88%;
+  max-width: 1250px;
+
+  margin: 45px auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+  margin-bottom: 30px;
+}
+
+.heading h1 {
+  font-size: 34px;
+
+  margin-bottom: 8px;
+
+  color: #111827;
+}
+
+.heading p {
+  font-size: 15px;
+
+  color: #6b7280;
+}
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 24px;
+
+  align-items: stretch;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  padding: 24px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+
+  transition: box-shadow 0.25s ease;
+
+  min-width: 0;
+}
+
+.card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.card-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.card-header h2 {
+  font-size: 17px;
+
+  font-weight: 600;
+
+  color: #111827;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea {
+  width: 100%;
+
+  height: 330px;
+
+  resize: none;
+
+  display: block;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 12px;
+
+  padding: 16px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: #374151;
+
+  background: white;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+textarea:focus {
+  border-color: #6366f1;
+
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* =========================
+   INPUT FOOTER
+========================= */
+
+.input-footer {
+  margin-top: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.counter {
+  font-size: 13px;
+
+  color: #9ca3af;
+}
+
+.separator {
+  margin: 0 4px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.actions {
+  display: flex;
+
+  gap: 10px;
+}
+
+button {
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  border-radius: 9px;
+
+  padding: 10px 16px;
+
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.clear-btn {
+  background: #f3f4f6;
+
+  color: #374151;
+}
+
+.clear-btn:hover {
+  background: #e5e7eb;
+}
+
+.summarize-btn {
+  background: #6366f1;
+
+  color: white;
+}
+
+.summarize-btn:hover {
+  background: #4f46e5;
+
+  transform: translateY(-1px);
+}
+
+.summarize-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================
+   SUMMARY OPTIONS
+========================= */
+
+.summary-options {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+select {
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  padding: 7px 10px;
+
+  background: white;
+
+  color: #374151;
+
+  font-size: 13px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #6366f1;
+}
+
+/* =========================
+   SUMMARY BOX
+========================= */
+
+.summary-box {
+  width: 100%;
+
+  height: 330px;
+
+  padding: 20px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  background: #fafafa;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #9ca3af;
+}
+
+.empty-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 14px;
+
+  background: #eef2ff;
+
+  color: #6366f1;
+
+  font-size: 25px;
+}
+
+.empty-state strong {
+  margin-bottom: 6px;
+
+  color: #9ca3af;
+}
+
+.empty-state p {
+  max-width: 280px;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   SUMMARY CONTENT
+========================= */
+
+.summary-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.summary-point {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  line-height: 1.6;
+
+  animation: fadeIn 0.3s ease;
+}
+
+.summary-point::before {
+  content: "•";
+
+  color: #6366f1;
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  flex-shrink: 0;
+}
+
+.summary-point p {
+  margin: 0;
+
+  color: #374151;
+
+  font-size: 14px;
+}
+
+/* =========================
+   SUMMARY FOOTER
+========================= */
+
+.summary-footer {
+  width: 100%;
+
+  margin-top: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.summary-info {
+  font-size: 13px;
+
+  color: #9ca3af;
+}
+
+.copy-btn {
+  background: #111827;
+
+  color: white;
+}
+
+.copy-btn:hover {
+  background: #374151;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.loader span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #6366f1;
+
+  animation: bounce 0.7s infinite alternate;
+}
+
+.loader span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loader span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.summary-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.summary-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.summary-box::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+
+  border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: 92%;
+
+    margin: 30px auto;
+  }
+
+  .heading h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .input-footer {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+
+  .summary-options .badge {
+    display: none;
+  }
+}

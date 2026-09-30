@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Text Summarizer</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Summary<span>AI</span></div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Ready to summarize
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="container">
+      <!-- Page Heading -->
+      <section class="heading">
+        <h1>Text Summarizer</h1>
+
+        <p>Paste your client's content below and generate a concise summary.</p>
+      </section>
+
+      <!-- Workspace -->
+      <section class="workspace">
+        <!-- ================= INPUT CARD ================= -->
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Client Content</h2>
+
+            <span class="badge"> Input </span>
+          </div>
+
+          <!-- Textarea -->
+          <textarea
+            id="inputText"
+            placeholder="Paste your client's document, email, meeting notes, or any other content here..."
+          ></textarea>
+
+          <!-- Input Footer -->
+          <div class="input-footer">
+            <div class="counter">
+              <span id="wordCount">0</span>
+              words
+
+              <span class="separator">•</span>
+
+              <span id="charCount">0</span>
+              characters
+            </div>
+
+            <div class="actions">
+              <button id="clearBtn" class="clear-btn">Clear</button>
+
+              <button id="summarizeBtn" class="summarize-btn">Summarize</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= OUTPUT CARD ================= -->
+
+        <div class="card output-card">
+          <!-- Output Header -->
+          <div class="card-header">
+            <h2>Summary</h2>
+
+            <div class="summary-options">
+              <select id="summaryLength">
+                <option value="short">Short</option>
+
+                <option value="medium" selected>Medium</option>
+
+                <option value="long">Detailed</option>
+              </select>
+
+              <span class="badge"> Output </span>
+            </div>
+          </div>
+
+          <!-- Summary Window -->
+          <div id="summaryBox" class="summary-box">
+            <!-- Empty State -->
+            <div class="empty-state">
+              <div class="empty-icon">✦</div>
+
+              <strong> No summary yet </strong>
+
+              <p>Your generated summary will appear here.</p>
+            </div>
+          </div>
+
+          <!-- Output Footer -->
+          <div class="summary-footer">
+            <span id="summaryInfo"> Waiting for content... </span>
+
+            <button id="copyBtn" class="copy-btn">Copy</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
